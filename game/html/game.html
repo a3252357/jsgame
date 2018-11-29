@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no,charset=UTF-8"/>
+</head>
+<body padding="0px" margin="0px" >
+<div id="div2" >
+    <a id='start'>触摸开始</a>
+</div>
+<style>
+    body {
+        padding:0;  /*去除内边距*/
+        border:0;   /*去除边框*/
+        margin:0;   /*去除外边距*/
+    }
+    #div2{
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height:100%;
+        text-align:center;
+		cursor: pointer;
+		opacity:0.2;
+		//background-color:rgba(255, 255, 255, 0.5);
+    }
+</style>
+<script>
+    var p1=document.getElementById("div2");
+    p1.style.width=window.innerWidth;
+    p1.style.height=window.innerHeight;
+    p1.style.lineHeight=window.innerHeight;
+    p1.style.backgroundColor='#333333';
+    p1.style.color='#ADADAD';
+    p1.style.fontSize='50px'
+</script>
+<div id="div1" >
+    <canvas id="game" width="100%" style="display: block;">
+    </canvas>
+</div>
+</body>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var datas=[{id:0,FClass:"Sprite",chance:20,score:5,src:"../img/zongzi.png",v:300,vangle:1,clicksound:"../audio/click.mp3"},{id:1,FClass:"Sprite",chance:5,score:-3,src:"../img/dumpling.png",v:300,vangle:1,clicksound:"../audio/click.mp3"},{id:2,FClass:"bomb",chance:4,score:0,src:"../img/bomb2.png",v:300,vangle:1,clicksound:"../audio/boom.mp3"}];
+    var config={
+        boxsize:7,
+        v:180,
+        timeall:60,
+        backimg:"../img/back.png",
+        backsound:"../audio/BGM.mp3"
+    };
+    var js="<script type='text/javascript' src='../js/Class.js?vs"+Math.random()+"'></"+"script>";
+    document.write(js);
+    js="<script type='text/javascript' src='../js/Game.js?vs"+Math.random()+"'></"+"script>";
+    document.write(js);
+</script>
+
+</html>
